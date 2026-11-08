@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oliver Starr Ludolph | Writer & Visual Artist</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Special+Elite&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            typewriter: ['"Courier Prime"', 'Courier', 'monospace'],
+            headline: ['"Special Elite"', '"Courier Prime"', 'monospace'],
+            serif: ['"Cormorant Garamond"', 'serif'],
+            mono: ['"JetBrains Mono"', '"Courier Prime"', 'monospace'],
+          },
+          colors: {
+            editorial: {
+              50: '#f8f8f7',
+              100: '#f1f1ee',
+              200: '#e3e2dc',
+              300: '#cfcdc3',
+              400: '#9d9988',
+              500: '#757161',
+              600: '#545043',
+              700: '#3c3930',
+              800: '#23211c',
+              900: '#141310',
+              950: '#0c0b09'
+            },
+            crimson: {
+              400: '#e05353',
+              600: '#b82626',
+              800: '#821717'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar & Texture */
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.05);
+    }
+    .dark ::-webkit-scrollbar-track {
+      background: #141310;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #757161;
+      border-radius: 4px;
+    }
+    .text-balance {
+      text-wrap: balance;
+    }
+    .paper-grain {
+      background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+    .dark .paper-grain {
+      background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 0);
+    }
+    /* Typewriter feel defaults */
+    body {
+      font-family: 'Courier Prime', Courier, monospace;
+      letter-spacing: -0.01em;
+    }
+    .dark body {
+      text-shadow: 0 0 1px rgba(255,255,255,0.2);
+    }
+  </style>
+</head>
+
+<body class="bg-editorial-50 text-editorial-900 dark:bg-editorial-950 dark:text-editorial-100 transition-colors duration-300 font-typewriter paper-grain selection:bg-neutral-800 selection:text-white dark:selection:bg-neutral-200 dark:selection:text-neutral-900 min-h-screen flex flex-col justify-between">
+
+  <!-- Header / Navigation -->
+  <header class="fixed top-0 left-0 right-0 z-40 bg-editorial-50/90 dark:bg-editorial-950/90 backdrop-blur-md border-b border-editorial-200/70 dark:border-editorial-800/80 transition-colors">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo & Monogram -->
+      <a href="#hero" class="flex items-center gap-3.5 group">
+        <div class="w-10 h-10 rounded-full border border-editorial-300 dark:border-editorial-700 flex items-center justify-center p-1.5 transition-transform duration-300 group-hover:scale-105 bg-white dark:bg-editorial-900 shadow-sm">
+          <!-- Precise Monogram Vector matching Oliver's original sigil -->
+          <svg viewBox="0 0 1000 1000" class="w-full h-full stroke-editorial-900 dark:stroke-editorial-100 fill-none" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Left loop (O/G swirl) -->
+            <path d="M 322 430 C 240 435 180 500 182 600 C 185 705 275 725 365 710 C 430 690 458 630 458 555 C 458 480 405 385 348 392 C 330 395 342 460 375 470 C 418 478 450 435 480 375" stroke-width="26" />
+            <!-- Tall dynamic downstroke stem -->
+            <path d="M 388 200 C 410 270 470 475 570 690 C 625 800 682 830 684 828" stroke-width="32" />
+            <!-- Sweeping ascender arc -->
+            <path d="M 430 460 C 475 390 540 280 622 176" stroke-width="22" />
+            <!-- Sharp cross-slash & long rightward taper -->
+            <path d="M 280 610 L 490 530 L 892 445" stroke-width="24" />
+          </svg>
+        </div>
+        <div class="leading-tight">
+          <span class="font-headline font-bold text-lg tracking-wide uppercase block text-editorial-900 dark:text-editorial-50">Oliver Starr</span>
+          <span class="text-[11px] tracking-widest uppercase font-typewriter text-editorial-500 dark:text-editorial-400">Writer & Artist</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8 font-typewriter text-xs uppercase tracking-wider text-editorial-600 dark:text-editorial-300">
+        <a href="#about" class="hover:text-black dark:hover:text-white transition-colors">About</a>
+        <a href="#writings" class="hover:text-black dark:hover:text-white transition-colors">Writings</a>
+        <a href="#photography" class="hover:text-black dark:hover:text-white transition-colors">Photography</a>
+        <a href="#experience" class="hover:text-black dark:hover:text-white transition-colors">Experience</a>
+        <a href="#contact" class="hover:text-black dark:hover:text-white transition-colors">Contact</a>
+      </nav>
+
+      <!-- Theme Switcher & Action -->
+      <div class="flex items-center gap-3">
+        <button id="themeToggle" aria-label="Toggle Theme" class="p-2.5 rounded-full border border-editorial-300 dark:border-editorial-700 bg-white dark:bg-editorial-900 text-editorial-700 dark:text-editorial-300 hover:text-black dark:hover:text-white transition">
+          <svg id="moonIcon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+          <svg id="sunIcon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+        </button>
+
+        <a href="https://substack.com/@flippthescript/note/p-22186001?utm_source=notes-share-action&r=83ogk6" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-editorial-800 dark:border-editorial-200 text-xs font-typewriter tracking-wide text-white bg-editorial-900 dark:bg-editorial-100 dark:text-editorial-900 hover:opacity-90 transition">
+          Substack
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobileMenuBtn" aria-label="Open Navigation Menu" class="md:hidden p-2 rounded-lg text-editorial-800 dark:text-editorial-200 hover:bg-editorial-100 dark:hover:bg-editorial-900 transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden md:hidden px-6 py-6 border-b border-editorial-200 dark:border-editorial-800 bg-editorial-50 dark:bg-editorial-950 font-typewriter text-sm uppercase flex flex-col gap-4">
+      <a href="#about" class="mobile-nav-link py-1 hover:text-black dark:hover:text-white">About</a>
+      <a href="#writings" class="mobile-nav-link py-1 hover:text-black dark:hover:text-white">Writings</a>
+      <a href="#photography" class="mobile-nav-link py-1 hover:text-black dark:hover:text-white">Photography</a>
+      <a href="#experience" class="mobile-nav-link py-1 hover:text-black dark:hover:text-white">Experience</a>
+      <a href="#contact" class="mobile-nav-link py-1 hover:text-black dark:hover:text-white">Contact</a>
+      <a href="https://substack.com/@flippthescript/note/p-22186001?utm_source=notes-share-action&r=83ogk6" target="_blank" class="py-1 text-editorial-500">Read on Substack &rarr;</a>
+    </div>
+  </header>
+
+  <main class="pt-24 flex-grow">
+    <!-- Hero Section -->
+    <section id="hero" class="relative py-20 md:py-32 px-5 sm:px-8 border-b border-editorial-200 dark:border-editorial-900">
+      <div class="max-w-4xl mx-auto text-center md:text-left flex flex-col md:flex-row items-center gap-10 md:gap-14">
+        
+        <!-- Big Brandmark Symbol -->
+        <div class="w-36 h-36 md:w-48 md:h-48 flex-shrink-0 rounded-2xl bg-white dark:bg-editorial-900 border border-editorial-200 dark:border-editorial-800 shadow-xl p-6 flex items-center justify-center relative overflow-hidden group">
+          <div class="absolute inset-0 bg-gradient-to-tr from-amber-500/5 to-transparent dark:from-amber-400/5"></div>
+          <img src="dc66b823-1fb8-48c0-b750-97b825303b23-1_all_8135.png" alt="Oliver Starr Signature Monogram" class="w-full h-full object-contain filter dark:invert transition-transform duration-500 group-hover:scale-105" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <svg viewBox="0 0 1000 1000" style="display:none;" class="w-full h-full stroke-editorial-900 dark:stroke-editorial-100 fill-none transition-transform duration-500 group-hover:scale-105" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M 322 430 C 240 435 180 500 182 600 C 185 705 275 725 365 710 C 430 690 458 630 458 555 C 458 480 405 385 348 392 C 330 395 342 460 375 470 C 418 478 450 435 480 375" stroke-width="24" />
+            <path d="M 388 200 C 410 270 470 475 570 690 C 625 800 682 830 684 828" stroke-width="28" />
+            <path d="M 430 460 C 475 390 540 280 622 176" stroke-width="20" />
+            <path d="M 280 610 L 490 530 L 892 445" stroke-width="22" />
+          </svg>
+        </div>
+
+        <div class="flex-1 space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-editorial-300 dark:border-editorial-800 text-[11px] font-typewriter uppercase tracking-wider text-editorial-600 dark:text-editorial-400 bg-white/70 dark:bg-editorial-900/70">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Cedar Falls, Iowa &bull; Open for commissions
+          </div>
+          
+          <h1 class="text-4xl sm:text-6xl font-headline tracking-tight text-editorial-950 dark:text-white leading-[1.1]">
+            Oliver Starr <span class="italic">Ludolph</span>
+          </h1>
+          
+          <p class="text-base sm:text-lg text-editorial-700 dark:text-editorial-200 font-typewriter leading-relaxed max-w-2xl text-balance">
+            Independent writer, essayist, and visual photographer examining human psychology, existential philosophy, urban textures, and the quiet spaces between modern noise.
+          </p>
+
+          <div class="pt-3 flex flex-wrap items-center justify-center md:justify-start gap-4 text-xs font-typewriter">
+            <a href="#writings" class="px-5 py-2.5 rounded-full bg-editorial-900 text-white dark:bg-white dark:text-editorial-950 hover:bg-neutral-800 dark:hover:bg-neutral-200 transition">
+              Explore Writings &darr;
+            </a>
+            <a href="#photography" class="px-5 py-2.5 rounded-full border border-editorial-300 dark:border-editorial-700 hover:bg-editorial-100 dark:hover:bg-editorial-900 transition">
+              View Gallery
+            </a>
+            <button onclick="copyContact()" class="px-5 py-2.5 rounded-full border border-dashed border-editorial-400 dark:border-editorial-700 text-editorial-600 dark:text-editorial-300 hover:text-black dark:hover:text-white transition flex items-center gap-1.5" id="copyEmailBtn">
+              <span>Copy Email</span>
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-5 sm:px-8 border-b border-editorial-200 dark:border-editorial-900 bg-white/40 dark:bg-editorial-900/20">
+      <div class="max-w-4xl mx-auto space-y-12">
+        <div class="flex items-baseline justify-between border-b border-editorial-200 dark:border-editorial-800 pb-4">
+          <span class="font-typewriter text-xs uppercase tracking-widest text-editorial-500">01 / Profile</span>
+          <h2 class="font-headline text-3xl sm:text-4xl">Artistic Statement & Perspective</h2>
+        </div>
+
+        <div class="grid md:grid-cols-12 gap-8 items-start">
+          <div class="md:col-span-7 space-y-5 text-editorial-800 dark:text-editorial-200 font-typewriter leading-relaxed">
+            <p>
+              My work revolves around examining the paradoxes of living today: the jarring collision of digital acceleration with private isolation, the tension between cosmic insignificance and everyday human empathy, and the unnoticed poetry within utilitarian urban streetscapes.
+            </p>
+            <p>
+              Whether analyzing Spinoza’s rationalism through a modern Cognitive Behavioral Therapy lens, wrestling with Camusian absurdism through contemporary pop culture, or walking the Midwestern pavements with a camera pointed at rusted steel and layered stickers, I seek out honesty and emotional lucidity.
+            </p>
+            <div class="pt-2 border-l-2 border-editorial-400 dark:border-editorial-600 pl-4 italic font-typewriter text-base sm:text-lg text-editorial-900 dark:text-editorial-100">
+              "To truly cope with the very real, existing ache of grief by dismissing it is nothing, if not a lie... yet we can acknowledge that this doesn't negate our humanity."
+            </div>
+          </div>
+
+          <div class="md:col-span-5 bg-white dark:bg-editorial-900 p-6 rounded-2xl border border-editorial-200 dark:border-editorial-800 shadow-sm space-y-4">
+            <h3 class="font-typewriter text-xs uppercase tracking-wider text-editorial-400 border-b border-editorial-100 dark:border-editorial-800 pb-2">Creator Bio Summary</h3>
+            <ul class="space-y-3 text-sm font-typewriter">
+              <li class="flex justify-between pb-1 border-b border-editorial-100 dark:border-editorial-800">
+                <span class="text-editorial-500">Base</span>
+                <span class="font-medium text-editorial-900 dark:text-editorial-100">Cedar Falls, Iowa</span>
+              </li>
+              <li class="flex justify-between pb-1 border-b border-editorial-100 dark:border-editorial-800">
+                <span class="text-editorial-500">Focus Areas</span>
+                <span class="font-medium text-right text-editorial-900 dark:text-editorial-100">Creative Nonfiction, Essays, Street Photography</span>
+              </li>
+              <li class="flex justify-between pb-1 border-b border-editorial-100 dark:border-editorial-800">
+                <span class="text-editorial-500">Themes</span>
+                <span class="font-medium text-right text-editorial-900 dark:text-editorial-100">Absurdism, CBT, Solitude, Texture</span>
+              </li>
+              <li class="flex justify-between">
+                <span class="text-editorial-500">Publication</span>
+                <a href="https://substack.com/@flippthescript/note/p-22186001?utm_source=notes-share-action&r=83ogk6" target="_blank" class="font-medium underline hover:text-black dark:hover:text-white text-editorial-900 dark:text-editorial-100">Substack (@flippthescript)</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Writings Section -->
+    <section id="writings" class="py-20 px-5 sm:px-8 border-b border-editorial-200 dark:border-editorial-900">
+      <div class="max-w-4xl mx-auto space-y-10">
+        
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-editorial-200 dark:border-editorial-800 pb-4">
+          <div>
+            <span class="font-typewriter text-xs uppercase tracking-widest text-editorial-500">02 / Literature</span>
+            <h2 class="font-headline text-3xl sm:text-4xl">Selected Writings & Essays</h2>
+          </div>
+          <!-- Filter buttons -->
+          <div class="flex gap-2 font-typewriter text-xs" id="writingFilters">
+            <button data-filter="all" class="filter-btn px-3 py-1 rounded-full bg-editorial-900 text-white dark:bg-white dark:text-editorial-900 transition">All</button>
+            <button data-filter="essay" class="filter-btn px-3 py-1 rounded-full border border-editorial-300 dark:border-editorial-700 hover:bg-editorial-100 dark:hover:bg-editorial-900 transition">Essays</button>
+            <button data-filter="creative" class="filter-btn px-3 py-1 rounded-full border border-editorial-300 dark:border-editorial-700 hover:bg-editorial-100 dark:hover:bg-editorial-900 transition">Creative Prose</button>
+            <button data-filter="poetry" class="filter-btn px-3 py-1 rounded-full border border-editorial-300 dark:border-editorial-700 hover:bg-editorial-100 dark:hover:bg-editorial-900 transition">Poetry</button>
+          </div>
+        </div>
+
+        <!-- Writings List Grid -->
+        <div class="grid gap-6 font-typewriter" id="writingsContainer">
+
+          <!-- 1. Passive vs Active Nihilism -->
+          <article data-category="essay" class="writing-card p-6 md:p-8 rounded-2xl bg-white dark:bg-editorial-900 border border-editorial-200 dark:border-editorial-800 hover:border-editorial-400 dark:hover:border-editorial-600 transition shadow-sm group">
+            <div class="flex items-center justify-between font-typewriter text-xs text-editorial-500 mb-2">
+              <span class="uppercase tracking-wider">Philosophical Essay</span>
+              <span>1,200 Words &bull; Albert Camus & Pop Nihilism</span>
+            </div>
+            <h3 class="font-headline text-2xl md:text-3xl text-editorial-950 dark:text-white group-hover:text-amber-800 dark:group-hover:text-amber-300 transition-colors">
+              Passive Vs. Active Nihilism: Where Do We Find the Balance?
+            </h3>
+            <p class="mt-3 text-editorial-700 dark:text-editorial-200 text-sm md:text-base leading-relaxed line-clamp-2">
+              An analytical dissection of cynicism through the duality of Rick Sanchez and Albert Camus's The Myth of Sisyphus—examining how grief hides beneath pseudo-intellectual apathy.
+            </p>
+            <div class="mt-5 flex items-center justify-between pt-4 border-t border-editorial-100 dark:border-editorial-800">
+              <span class="italic text-xs text-editorial-500">"Does our lack of cosmic weight suggest that our lives are entirely ours in full?"</span>
+              <button onclick="openReadingModal('nihilism')" class="font-typewriter text-xs uppercase tracking-wider text-editorial-900 dark:text-editorial-100 font-bold group-hover:underline flex items-center gap-1">
+                Read Piece &rarr;
+              </button>
+            </div>
+          </article>
+
+          <!-- 2. CBT & Philosophy -->
+          <article data-category="essay" class="writing-card p-6 md:p-8 rounded-2xl bg-white dark:bg-editorial-900 border border-editorial-200 dark:border-editorial-800 hover:border-editorial-400 dark:hover:border-editorial-600 transition shadow-sm group">
+            <div class="flex items-center justify-between font-typewriter text-xs text-editorial-500 mb-2">
+              <span class="uppercase tracking-wider">Analytical Research</span>
+              <span>Baruch Spinoza & Cognitive Psychology</span>
+            </div>
+            <h3 class="font-headline text-2xl md:text-3xl text-editorial-950 dark:text-white group-hover:text-amber-800 dark:group-hover:text-amber-300 transition-colors">
+              CBT & Philosophy: The Roots in an Exiled Lens-Grinder
+            </h3>
+            <p class="mt-3 text-editorial-700 dark:text-editorial-200 text-sm md:text-base leading-relaxed line-clamp-2">
+              Tracing modern emotional regulation and cognitive reappraisal back to Baruch Spinoza's 17th-century Amsterdam excommunication and his revolutionary logic of human psychology.
+            </p>
+            <div class="mt-5 flex items-center justify-between pt-4 border-t border-editorial-100 dark:border-editorial-800">
+              <span class="italic text-xs text-editorial-500">"Spinoza executed what modern psychologists call behavioral activation."</span>
+              <button onclick="openReadingModal('spinoza')" class="font-typewriter text-xs uppercase tracking-wider text-editorial-900 dark:text-editorial-100 font-bold group-hover:underline flex items-center gap-1">
+                Read Piece &rarr;
+              </button>
+            </div>
+          </article>
+
+          <!-- 3. 2:37 On A Thursday -->
+          <article data-category="creative" class="writing-card p-6 md:p-8 rounded-2xl bg-white dark:bg-editorial-900 border border-editorial-200 dark:border-editorial-800 hover:border-editorial-400 dark:hover:border-editorial-600 transition shadow-sm group">
+            <div class="flex items-center justify-between font-typewriter text-xs text-editorial-500 mb-2">
+              <span class="uppercase tracking-wider">Creative Nonfiction</span>
+              <span>Modern Fatigue & The Feed</span>
+            </div>
+            <h3 class="font-headline text-2xl md:text-3xl text-editorial-950 dark:text-white group-hover:text-amber-800 dark:group-hover:text-amber-300 transition-colors">
+              2:37 On A Thursday
+            </h3>
+            <p class="mt-3 text-editorial-700 dark:text-editorial-200 text-sm md:text-base leading-relaxed line-clamp-2">
+              A vivid, visceral snapshot of afternoon quietude interrupted by phone vibrations, fluctuating instantaneously between personal luxury, global horror, and afternoon ennui.
+            </p>
+            <div class="mt-5 flex items-center justify-between pt-4 border-t border-editorial-100 dark:border-editorial-800">
+              <span class="italic text-xs text-editorial-500">"Sitting in silence. Drifting back and forth between this luxury and tragedy."</span>
+              <button onclick="openReadingModal('thursday')" class="font-typewriter text-xs uppercase tracking-wider text-editorial-900 dark:text-editorial-100 font-bold group-hover:underline flex items-center gap-1">
+                Read Piece &rarr;
+              </button>
+            </div>
+          </article>
+
+          <!-- 4. Do You? -->
+          <article data-category="creative" class="writing-card p-6 md:p-8 rounded-2xl bg-white dark:bg-editorial-900 border border-editorial-200 dark:border-editorial-800 hover:border-editorial-400 dark:hover:border-editorial-600 transition shadow-sm group">
+            <div class="flex items-center justify-between font-typewriter text-xs text-editorial-500 mb-2">
+              <span class="uppercase tracking-wider">Personal Vignette</span>
+              <span>Alan Watts, Family & Distance</span>
+            </div>
+            <h3 class="font-headline text-2xl md:text-3xl text-editorial-950 dark:text-white group-hover:text-amber-800 dark:group-hover:text-amber-300 transition-colors">
+              Do You?
+            </h3>
+            <p class="mt-3 text-editorial-700 dark:text-editorial-200 text-sm md:text-base leading-relaxed line-clamp-2">
+              A quiet, biting confrontation sparked by an unexpected social media comment about Alan Watts, questioning the chasm between espousing wisdom and embodying kindness.
+            </p>
+            <div class="mt-5 flex items-center justify-between pt-4 border-t border-editorial-100 dark:border-editorial-800">
+              <span class="italic text-xs text-editorial-500">"After all, dad—I still have a heart. Do you?"</span>
+              <button onclick="openReadingModal('doyou')" class="font-typewriter text-xs uppercase tracking-wider text-editorial-900 dark:text-editorial-100 font-bold group-hover:underline flex items-center gap-1">
+                Read Piece &rarr;
+              </button>
+            </div>
+          </article>
+
+          <!-- 5. Prayer On Paper -->
+          <article data-category="poetry" class="writing-card p-6 md:p-8 rounded-2xl bg-white dark:bg-editorial-900 border border-editorial-200 dark:border-editorial-800 hover:border-editorial-400 dark:hover:border-editorial-600 transition shadow-sm group">
+            <div class="flex items-center justify-between font-typewriter text-xs text-editorial-500 mb-2">
+              <span class="uppercase tracking-wider">Poetry</span>
+              <span>Devotion & Vulnerability</span>
+            </div>
+            <h3 class="font-headline text-2xl md:text-3xl text-editorial-950 dark:text-white group-hover:text-amber-800 dark:group-hover:text-amber-300 transition-colors">
+              Prayer On Paper
+            </h3>
+            <p class="mt-3 text-editorial-700 dark:text-editorial-200 text-sm md:text-base leading-relaxed line-clamp-2">
+              A raw, lyrical petition to an indifferent sky, pleading to love gently while bearing witness to personal history and emotional weight.
+            </p>
+            <div class="mt-5 flex items-center justify-between pt-4 border-t border-editorial-100 dark:border-editorial-800">
+              <span class="italic text-xs text-editorial-500">"A trail of carnage and good intentions follow me everywhere I go."</span>
+              <button onclick="openReadingModal('prayer')" class="font-typewriter text-xs uppercase tracking-wider text-editorial-900 dark:text-editorial-100 font-bold group-hover:underline flex items-center gap-1">
+                Read Piece &rarr;
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Photography Gallery Section -->
+    <section id="photography" class="py-20 px-5 sm:px-8 border-b border-editorial-200 dark:border-editorial-900 bg-white/30 dark:bg-editorial-900/10">
+      <div class="max-w-6xl mx-auto space-y-10">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-editorial-200 dark:border-editorial-800 pb-4">
+          <div>
+            <span class="font-typewriter text-xs uppercase tracking-widest text-editorial-500">03 / Visual Works</span>
+            <h2 class="font-headline text-3xl sm:text-4xl">Street, Texture & Solitude</h2>
+          </div>
+          <div class="flex flex-wrap items-center gap-3">
+            <!-- Local asset upload & status helper -->
+            <label for="localImagePicker" class="cursor-pointer inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-editorial-300 dark:border-editorial-700 bg-white dark:bg-editorial-900 text-[11px] font-typewriter hover:border-editorial-500 transition">
+              <svg class="w-3.5 h-3.5 text-editorial-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+              <span>Load Local Files</span>
+              <input type="file" id="localImagePicker" multiple accept="image/*" class="hidden" onchange="handleLocalFiles(event)">
+            </label>
+            <span id="loadBadge" class="text-[11px] font-typewriter text-editorial-400">Direct file binding</span>
+          </div>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="galleryGrid">
+
+          <!-- Photo 1: Stickers / Decals Utility Box -->
+          <div class="photo-card group relative cursor-pointer overflow-hidden rounded-xl border border-editorial-200 dark:border-editorial-800 bg-neutral-900 shadow-md aspect-[4/3] sm:aspect-square" onclick="openPhotoLightbox(0)">
+            <img id="img-0" src="1000002432.jpg" alt="Decal-covered street utility box" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://placehold.co/800x800/181816/f5f5f5?text=1000002432.jpg+Artifacts+of+the+Street'">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-85 group-hover:opacity-95 transition-opacity p-4 flex flex-col justify-end text-white font-typewriter">
+              <span class="text-[10px] uppercase tracking-wider text-amber-300/80">Urban Texture &bull; 1000002432.jpg</span>
+              <h4 class="font-headline text-lg font-medium text-white">Artifacts of the Street</h4>
+              <p class="text-xs text-neutral-300 opacity-0 group-hover:opacity-100 transition-opacity">Sticker layerings on municipal junction box</p>
+            </div>
+          </div>
+
+          <!-- Photo 2: Alleyway Ivy & Brick Wall -->
+          <div class="photo-card group relative cursor-pointer overflow-hidden rounded-xl border border-editorial-200 dark:border-editorial-800 bg-neutral-900 shadow-md aspect-[4/3] sm:aspect-square" onclick="openPhotoLightbox(1)">
+            <img id="img-1" src="1000002433.jpg" alt="Overhanging autumn ivy on stone wall leading to alleyway" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://placehold.co/800x800/181816/f5f5f5?text=1000002433.jpg+The+Overhang'">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-85 group-hover:opacity-95 transition-opacity p-4 flex flex-col justify-end text-white font-typewriter">
+              <span class="text-[10px] uppercase tracking-wider text-amber-300/80">Perspective &bull; 1000002433.jpg</span>
+              <h4 class="font-headline text-lg font-medium text-white">The Overhang</h4>
+              <p class="text-xs text-neutral-300 opacity-0 group-hover:opacity-100 transition-opacity">Autumn ivy, stone masonry, quiet alley corridor</p>
+            </div>
+          </div>
+
+          <!-- Photo 3: Main St Perspective & Streetlights -->
+          <div class="photo-card group relative cursor-pointer overflow-hidden rounded-xl border border-editorial-200 dark:border-editorial-800 bg-neutral-900 shadow-md aspect-[4/3] sm:aspect-square" onclick="openPhotoLightbox(2)">
+            <img id="img-2" src="1000002434.jpg" alt="Main Street corner light post vertical perspective" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://placehold.co/800x800/181816/f5f5f5?text=1000002434.jpg+Main+Street+Perspective'">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-85 group-hover:opacity-95 transition-opacity p-4 flex flex-col justify-end text-white font-typewriter">
+              <span class="text-[10px] uppercase tracking-wider text-amber-300/80">Lines & Geometry &bull; 1000002434.jpg</span>
+              <h4 class="font-headline text-lg font-medium text-white">Main Street Perspective</h4>
+              <p class="text-xs text-neutral-300 opacity-0 group-hover:opacity-100 transition-opacity">Vertical masonry frame & street signals</p>
+            </div>
+          </div>
+
+          <!-- Photo 4: Iron Fire Escape & Red Brick -->
+          <div class="photo-card group relative cursor-pointer overflow-hidden rounded-xl border border-editorial-200 dark:border-editorial-800 bg-neutral-900 shadow-md aspect-[4/3] sm:aspect-square" onclick="openPhotoLightbox(3)">
+            <img id="img-3" src="1000002431.jpg" alt="Victorian wrought iron staircase against red brick" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://placehold.co/800x800/181816/f5f5f5?text=1000002431.jpg+Iron+and+Brick'">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-85 group-hover:opacity-95 transition-opacity p-4 flex flex-col justify-end text-white font-typewriter">
+              <span class="text-[10px] uppercase tracking-wider text-amber-300/80">Architecture &bull; 1000002431.jpg</span>
+              <h4 class="font-headline text-lg font-medium text-white">Iron & Brick</h4>
+              <p class="text-xs text-neutral-300 opacity-0 group-hover:opacity-100 transition-opacity">Industrial diagonal bisecting red masonry</p>
+            </div>
+          </div>
+
+          <!-- Photo 5: Rainy Pavement, Converse, Wet Leaves -->
+          <div class="photo-card group relative cursor-pointer overflow-hidden rounded-xl border border-editorial-200 dark:border-editorial-800 bg-neutral-900 shadow-md aspect-[4/3] sm:aspect-square" onclick="openPhotoLightbox(4)">
+            <img id="img-4" src="1000002424.jpg" alt="Wet stone tiles, puddle reflection, sneakers, fallen leaves" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://placehold.co/800x800/181816/f5f5f5?text=1000002424.jpg+Rain+and+Leaves'">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-85 group-hover:opacity-95 transition-opacity p-4 flex flex-col justify-end text-white font-typewriter">
+              <span class="text-[10px] uppercase tracking-wider text-amber-300/80">Street POV &bull; 1000002424.jpg</span>
+              <h4 class="font-headline text-lg font-medium text-white">Rain & Leaves</h4>
+              <p class="text-xs text-neutral-300 opacity-0 group-hover:opacity-100 transition-opacity">Converse sneakers on wet pavers with reflections</p>
+            </div>
+          </div>
+
+          <!-- Photo 6: Stairwell Performance Portrait -->
+          <div class="photo-card group relative cursor-pointer overflow-hidden rounded-xl border border-editorial-200 dark:border-editorial-800 bg-neutral-900 shadow-md aspect-[4/3] sm:aspect-square" onclick="openPhotoLightbox(5)">
+            <img id="img-5" src="1000002365.jpg" alt="Moody character study in architectural stairwell" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://placehold.co/800x800/181816/f5f5f5?text=1000002365.jpg+Character+and+Form'">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-85 group-hover:opacity-95 transition-opacity p-4 flex flex-col justify-end text-white font-typewriter">
+              <span class="text-[10px] uppercase tracking-wider text-amber-300/80">Portraiture &bull; 1000002365.jpg</span>
+              <h4 class="font-headline text-lg font-medium text-white">Character & Form</h4>
+              <p class="text-xs text-neutral-300 opacity-0 group-hover:opacity-100 transition-opacity">Staircase geometry, theatrical styled posture</p>
+            </div>
+          </div>
+
+          <!-- Photo 7: Churchyard / Gravestones / Rural Sunset -->
+          <div class="photo-card group relative cursor-pointer overflow-hidden rounded-xl border border-editorial-200 dark:border-editorial-800 bg-neutral-900 shadow-md aspect-[4/3] sm:aspect-square" onclick="openPhotoLightbox(6)">
+            <img id="img-6" src="1000002163.jpg" alt="Rural church and quiet cemetery at dusk" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://placehold.co/800x800/181816/f5f5f5?text=1000002163.jpg+The+Crossing'">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-85 group-hover:opacity-95 transition-opacity p-4 flex flex-col justify-end text-white font-typewriter">
+              <span class="text-[10px] uppercase tracking-wider text-amber-300/80">Landscape &bull; 1000002163.jpg</span>
+              <h4 class="font-headline text-lg font-medium text-white">The Crossing</h4>
+              <p class="text-xs text-neutral-300 opacity-0 group-hover:opacity-100 transition-opacity">Washington cemetery grounds & chapel at dusk</p>
+            </div>
+          </div>
+
+          <!-- Photo 8: Crimson Honeysuckle / Red Berries Macro -->
+          <div class="photo-card group relative cursor-pointer overflow-hidden rounded-xl border border-editorial-200 dark:border-editorial-800 bg-neutral-900 shadow-md aspect-[4/3] sm:aspect-square" onclick="openPhotoLightbox(7)">
+            <img id="img-7" src="1000002057.jpg" alt="Vibrant red berries on deep green leafy branch" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://placehold.co/800x800/181816/f5f5f5?text=1000002057.jpg+Honeysuckle+Crimson'">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-85 group-hover:opacity-95 transition-opacity p-4 flex flex-col justify-end text-white font-typewriter">
+              <span class="text-[10px] uppercase tracking-wider text-amber-300/80">Macro Botanical &bull; 1000002057.jpg</span>
+              <h4 class="font-headline text-lg font-medium text-white">Honeysuckle Crimson</h4>
+              <p class="text-xs text-neutral-300 opacity-0 group-hover:opacity-100 transition-opacity">Spherical scarlet berries against green leaves</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience / Resume Section -->
+    <section id="experience" class="py-20 px-5 sm:px-8 border-b border-editorial-200 dark:border-editorial-900">
+      <div class="max-w-4xl mx-auto space-y-12">
+        <div class="flex items-baseline justify-between border-b border-editorial-200 dark:border-editorial-800 pb-4">
+          <span class="font-typewriter text-xs uppercase tracking-widest text-editorial-500">04 / Background</span>
+          <h2 class="font-headline text-3xl sm:text-4xl">Experience, Education & Skills</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          
+          <!-- Experience Column -->
+          <div class="md:col-span-2 space-y-8 font-typewriter">
+            <h3 class="font-typewriter text-xs uppercase tracking-widest text-editorial-400">Employment & Performance</h3>
+            
+            <div class="space-y-8 border-l border-editorial-300 dark:border-editorial-800 pl-6 ml-2">
+              
+              <!-- Writer -->
+              <div class="relative">
+                <span class="absolute -left-[31px] top-1.5 w-2.5 h-2.5 rounded-full bg-editorial-900 dark:bg-editorial-100"></span>
+                <div class="flex justify-between items-baseline flex-wrap">
+                  <h4 class="font-headline text-xl font-medium text-editorial-950 dark:text-white">Independent Writer</h4>
+                  <span class="text-xs text-editorial-500">Aug 2025 &ndash; Present</span>
+                </div>
+                <div class="text-xs text-editorial-500 mb-2">Self-Employed &bull; Cedar Falls, IA</div>
+                <p class="text-sm text-editorial-800 dark:text-editorial-200 leading-relaxed">
+                  Developed creative nonfiction across multiple formats, including poetry, personal essays, and analytical essays, demonstrating adaptable writing and deep philosophical inquiry.
+                </p>
+              </div>
+
+              <!-- Scare Actor -->
+              <div class="relative">
+                <span class="absolute -left-[31px] top-1.5 w-2.5 h-2.5 rounded-full bg-editorial-400 dark:border-editorial-600"></span>
+                <div class="flex justify-between items-baseline flex-wrap">
+                  <h4 class="font-headline text-xl font-medium text-editorial-950 dark:text-white">Scare Actor (Seasonal)</h4>
+                  <span class="text-xs text-editorial-500">Sep 2026 &ndash; Oct 2026</span>
+                </div>
+                <div class="text-xs text-editorial-500 mb-2">Bloomsbury Farm &bull; Atkins, IA</div>
+                <p class="text-sm text-editorial-800 dark:text-editorial-200 leading-relaxed">
+                  Portrayed a zombie prisoner in "Cell block Z," engaging guests through high-energy character-based performance, spatial awareness, and immersive seasonal entertainment.
+                </p>
+              </div>
+
+              <!-- Burger King -->
+              <div class="relative">
+                <span class="absolute -left-[31px] top-1.5 w-2.5 h-2.5 rounded-full bg-editorial-300 dark:bg-editorial-700"></span>
+                <div class="flex justify-between items-baseline flex-wrap">
+                  <h4 class="font-headline text-xl font-medium text-editorial-950 dark:text-white">Team Member</h4>
+                  <span class="text-xs text-editorial-500">Sep 2024</span>
+                </div>
+                <div class="text-xs text-editorial-500 mb-2">Burger King &bull; Muscatine, IA</div>
+                <p class="text-sm text-editorial-800 dark:text-editorial-200 leading-relaxed">
+                  Maintained welcoming guest experiences, prepared high-tempo orders with accuracy, processed register transactions, and ensured strict sanitation standards.
+                </p>
+              </div>
+
+              <!-- Culver's -->
+              <div class="relative">
+                <span class="absolute -left-[31px] top-1.5 w-2.5 h-2.5 rounded-full bg-editorial-300 dark:bg-editorial-700"></span>
+                <div class="flex justify-between items-baseline flex-wrap">
+                  <h4 class="font-headline text-xl font-medium text-editorial-950 dark:text-white">Cashier and Customer Service</h4>
+                  <span class="text-xs text-editorial-500">Jul 2022 &ndash; Aug 2022</span>
+                </div>
+                <div class="text-xs text-editorial-500 mb-2">Culver's &bull; Clinton, IA</div>
+                <p class="text-sm text-editorial-800 dark:text-editorial-200 leading-relaxed">
+                  Operated point-of-sale registers and fulfilled delivery responsibilities while applying proactive time-management and interpersonal communication.
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Sidebar: Education & Skills -->
+          <div class="space-y-8 font-typewriter">
+            
+            <!-- Education -->
+            <div class="bg-white dark:bg-editorial-900 p-6 rounded-2xl border border-editorial-200 dark:border-editorial-800 shadow-sm space-y-3">
+              <h3 class="text-xs uppercase tracking-widest text-editorial-400">Education</h3>
+              <div>
+                <h4 class="font-headline text-lg font-medium text-editorial-950 dark:text-white">High School Diploma / GED</h4>
+                <div class="text-xs text-editorial-500">Penn Foster &bull; 2020 &ndash; 2022</div>
+              </div>
+              <div class="pt-2 border-t border-editorial-100 dark:border-editorial-800">
+                <span class="inline-block px-2.5 py-1 rounded bg-editorial-100 dark:bg-editorial-800 text-[11px] text-editorial-700 dark:text-editorial-300">
+                  Food Handler Certified
+                </span>
+              </div>
+            </div>
+
+            <!-- Skills Badges -->
+            <div class="bg-white dark:bg-editorial-900 p-6 rounded-2xl border border-editorial-200 dark:border-editorial-800 shadow-sm space-y-4">
+              <h3 class="text-xs uppercase tracking-widest text-editorial-400">Core Competencies</h3>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="px-2.5 py-1 rounded-md text-xs bg-editorial-100 dark:bg-editorial-800 text-editorial-800 dark:text-editorial-200">Creative Nonfiction</span>
+                <span class="px-2.5 py-1 rounded-md text-xs bg-editorial-100 dark:bg-editorial-800 text-editorial-800 dark:text-editorial-200">Analytical Essays</span>
+                <span class="px-2.5 py-1 rounded-md text-xs bg-editorial-100 dark:bg-editorial-800 text-editorial-800 dark:text-editorial-200">Poetry Writing</span>
+                <span class="px-2.5 py-1 rounded-md text-xs bg-editorial-100 dark:bg-editorial-800 text-editorial-800 dark:text-editorial-200">Abstract Thinking</span>
+                <span class="px-2.5 py-1 rounded-md text-xs bg-editorial-100 dark:bg-editorial-800 text-editorial-800 dark:text-editorial-200">Street Photography</span>
+                <span class="px-2.5 py-1 rounded-md text-xs bg-editorial-100 dark:bg-editorial-800 text-editorial-800 dark:text-editorial-200">Character Acting</span>
+                <span class="px-2.5 py-1 rounded-md text-xs bg-editorial-100 dark:bg-editorial-800 text-editorial-800 dark:text-editorial-200">Takes Constructive Criticism</span>
+                <span class="px-2.5 py-1 rounded-md text-xs bg-editorial-100 dark:bg-editorial-800 text-editorial-800 dark:text-editorial-200">Self-Disciplined</span>
+                <span class="px-2.5 py-1 rounded-md text-xs bg-editorial-100 dark:bg-editorial-800 text-editorial-800 dark:text-editorial-200">Interpersonal Communication</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-5 sm:px-8 bg-white/40 dark:bg-editorial-900/20">
+      <div class="max-w-4xl mx-auto space-y-12">
+        <div class="flex items-baseline justify-between border-b border-editorial-200 dark:border-editorial-800 pb-4">
+          <span class="font-typewriter text-xs uppercase tracking-widest text-editorial-500">05 / Inquiries</span>
+          <h2 class="font-headline text-3xl sm:text-4xl">Get In Touch</h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-10">
+          
+          <div class="space-y-6 font-typewriter">
+            <p class="text-editorial-800 dark:text-editorial-200 leading-relaxed">
+              Available for writing collaborations, editorial submissions, photography prints, and creative commissions. Feel free to send a direct note or connect via phone or Substack.
+            </p>
+
+            <div class="space-y-3 text-xs">
+              <div class="flex items-center gap-3 text-editorial-700 dark:text-editorial-200">
+                <span class="w-20 text-editorial-500">Email:</span>
+                <a href="mailto:groguforever@gmail.com" class="hover:underline font-medium text-editorial-900 dark:text-white">groguforever@gmail.com</a>
+              </div>
+              <div class="flex items-center gap-3 text-editorial-700 dark:text-editorial-200">
+                <span class="w-20 text-editorial-500">Phone:</span>
+                <a href="tel:+15153724694" class="hover:underline font-medium text-editorial-900 dark:text-white">+1 515 372 4694</a>
+              </div>
+              <div class="flex items-center gap-3 text-editorial-700 dark:text-editorial-200">
+                <span class="w-20 text-editorial-500">Location:</span>
+                <span class="text-editorial-900 dark:text-white">Cedar Falls, IA 50613</span>
+              </div>
+              <div class="flex items-center gap-3 text-editorial-700 dark:text-editorial-200">
+                <span class="w-20 text-editorial-500">Writing:</span>
+                <a href="https://substack.com/@flippthescript/note/p-22186001?utm_source=notes-share-action&r=83ogk6" target="_blank" class="hover:underline text-amber-700 dark:text-amber-400 font-medium">Substack (@flippthescript)</a>
+              </div>
+            </div>
+
+            <!-- Signature block recreation -->
+            <div class="pt-4 flex items-center gap-4">
+              <div class="w-16 h-16 opacity-85 flex items-center justify-center">
+                <img src="dc66b823-1fb8-48c0-b750-97b825303b23-1_all_8135.png" alt="Signature" class="w-full h-full object-contain filter dark:invert" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <svg viewBox="0 0 1000 1000" style="display:none;" class="w-full h-full stroke-editorial-900 dark:stroke-editorial-100 fill-none" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M 322 430 C 240 435 180 500 182 600 C 185 705 275 725 365 710 C 430 690 458 630 458 555 C 458 480 405 385 348 392 C 330 395 342 460 375 470 C 418 478 450 435 480 375" stroke-width="26" />
+                  <path d="M 388 200 C 410 270 470 475 570 690 C 625 800 682 830 684 828" stroke-width="32" />
+                  <path d="M 430 460 C 475 390 540 280 622 176" stroke-width="22" />
+                  <path d="M 280 610 L 490 530 L 892 445" stroke-width="24" />
+                </svg>
+              </div>
+              <div class="text-xs font-typewriter italic text-editorial-500">
+                Oliver Starr Ludolph &mdash; cedar falls
+              </div>
+            </div>
+          </div>
+
+          <!-- Functional interactive contact form -->
+          <form id="portfolioContactForm" onsubmit="handleContactSubmit(event)" class="bg-white dark:bg-editorial-900 p-6 sm:p-8 rounded-2xl border border-editorial-200 dark:border-editorial-800 shadow-sm space-y-4 font-typewriter">
+            <div>
+              <label for="contactName" class="block text-xs uppercase tracking-wider text-editorial-500 mb-1">Your Name</label>
+              <input type="text" id="contactName" required placeholder="Name or publication" class="w-full px-4 py-2.5 rounded-lg border border-editorial-300 dark:border-editorial-700 bg-editorial-50/50 dark:bg-editorial-950/50 text-editorial-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-editorial-900 dark:focus:ring-editorial-200 text-sm">
+            </div>
+
+            <div>
+              <label for="contactEmail" class="block text-xs uppercase tracking-wider text-editorial-500 mb-1">Email Address</label>
+              <input type="email" id="contactEmail" required placeholder="name@domain.com" class="w-full px-4 py-2.5 rounded-lg border border-editorial-300 dark:border-editorial-700 bg-editorial-50/50 dark:bg-editorial-950/50 text-editorial-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-editorial-900 dark:focus:ring-editorial-200 text-sm">
+            </div>
+
+            <div>
+              <label for="contactSubject" class="block text-xs uppercase tracking-wider text-editorial-500 mb-1">Subject</label>
+              <select id="contactSubject" class="w-full px-4 py-2.5 rounded-lg border border-editorial-300 dark:border-editorial-700 bg-editorial-50/50 dark:bg-editorial-950/50 text-editorial-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-editorial-900 dark:focus:ring-editorial-200 text-sm">
+                <option value="General Inquiry">General Inquiry</option>
+                <option value="Writing Commission">Writing Commission / Essay</option>
+                <option value="Photography">Photography Print / Feature</option>
+                <option value="Collaboration">Artistic Collaboration</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="contactMessage" class="block text-xs uppercase tracking-wider text-editorial-500 mb-1">Message</label>
+              <textarea id="contactMessage" rows="4" required placeholder="Your message or collaboration idea..." class="w-full px-4 py-2.5 rounded-lg border border-editorial-300 dark:border-editorial-700 bg-editorial-50/50 dark:bg-editorial-950/50 text-editorial-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-editorial-900 dark:focus:ring-editorial-200 text-sm"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-3 rounded-lg bg-editorial-900 text-white dark:bg-editorial-100 dark:text-editorial-950 text-xs uppercase tracking-wider font-bold hover:opacity-90 transition flex items-center justify-center gap-2">
+              <span>Send Message</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </button>
+
+            <!-- Form Message Feedback -->
+            <div id="formFeedback" class="hidden p-3 rounded-lg bg-emerald-100 dark:bg-emerald-950/60 border border-emerald-300 dark:border-emerald-800 text-emerald-800 dark:text-emerald-200 text-xs text-center">
+              Thank you! Your message has been prepared. We'll be in touch soon.
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-editorial-200 dark:border-editorial-900 py-10 px-5 sm:px-8 bg-editorial-100/50 dark:bg-editorial-950 font-typewriter">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-editorial-500">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-editorial-400"></span>
+        <span>&copy; <span id="yearSpan">2026</span> Oliver Starr Ludolph. All Rights Reserved.</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="#hero" class="hover:underline">Back to top &uarr;</a>
+        <a href="https://substack.com/@flippthescript/note/p-22186001?utm_source=notes-share-action&r=83ogk6" target="_blank" class="hover:underline">Substack</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= READ MODAL (FULL TEXT WRITINGS) ================= -->
+  <div id="readingModal" class="fixed inset-0 z-50 hidden bg-black/75 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 overflow-y-auto font-typewriter">
+    <div class="bg-editorial-50 dark:bg-editorial-900 border border-editorial-300 dark:border-editorial-700 max-w-2xl w-full rounded-2xl shadow-2xl overflow-hidden my-8 max-h-[90vh] flex flex-col animate-in fade-in zoom-in-95 duration-200">
+      
+      <!-- Modal Header -->
+      <div class="p-6 border-b border-editorial-200 dark:border-editorial-800 flex items-start justify-between bg-white dark:bg-editorial-950">
+        <div>
+          <span id="modalMeta" class="text-xs uppercase tracking-widest text-editorial-500">Essay</span>
+          <h3 id="modalTitle" class="font-headline text-2xl sm:text-3xl font-normal text-editorial-950 dark:text-white mt-1">Title</h3>
+          <div id="modalSubhead" class="text-xs text-editorial-500 mt-1">By Oliver Starr Ludolph</div>
+        </div>
+        <button onclick="closeReadingModal()" aria-label="Close reader" class="p-2 rounded-full hover:bg-editorial-100 dark:hover:bg-editorial-800 text-editorial-500 hover:text-black dark:hover:text-white transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- Modal Body (Full Article content in Typewriter font) -->
+      <div id="modalBody" class="p-6 sm:p-10 overflow-y-auto space-y-6 text-editorial-800 dark:text-editorial-200 font-typewriter text-base sm:text-lg leading-relaxed selection:bg-amber-100 dark:selection:bg-amber-900">
+        <!-- Injected dynamically -->
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-4 border-t border-editorial-200 dark:border-editorial-800 bg-white/60 dark:bg-editorial-950/60 flex items-center justify-between text-xs text-editorial-500">
+        <div class="flex items-center gap-2">
+          <svg viewBox="0 0 1000 1000" class="w-5 h-5 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M 322 430 C 240 435 180 500 182 600 C 185 705 275 725 365 710 C 430 690 458 630 458 555 C 458 480 405 385 348 392 C 330 395 342 460 375 470 C 418 478 450 435 480 375" stroke-width="30" />
+            <path d="M 388 200 C 410 270 470 475 570 690 C 625 800 682 830 684 828" stroke-width="36" />
+            <path d="M 430 460 C 475 390 540 280 622 176" stroke-width="26" />
+            <path d="M 280 610 L 490 530 L 892 445" stroke-width="28" />
+          </svg>
+          <span>Oliver Starr Ludolph &bull; Archival Copy</span>
+        </div>
+        <button onclick="closeReadingModal()" class="px-4 py-1.5 rounded-lg border border-editorial-300 dark:border-editorial-700 hover:bg-editorial-200 dark:hover:bg-editorial-800 transition">Close</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= PHOTO LIGHTBOX MODAL ================= -->
+  <div id="photoLightbox" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-8 font-typewriter" onclick="handleLightboxBackdrop(event)">
+    <div class="relative max-w-4xl w-full bg-editorial-950 border border-editorial-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row max-h-[90vh]">
+      
+      <!-- Close Button -->
+      <button onclick="closePhotoLightbox()" class="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/60 text-white hover:bg-white hover:text-black transition">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+
+      <!-- Lightbox Image View -->
+      <div class="md:w-3/5 bg-black flex items-center justify-center p-2">
+        <img id="lightboxImg" src="" alt="Enlarged photo" class="max-h-[60vh] md:max-h-[80vh] w-full object-contain">
+      </div>
+
+      <!-- Lightbox Details -->
+      <div class="md:w-2/5 p-6 md:p-8 flex flex-col justify-between border-t md:border-t-0 md:border-l border-editorial-800 text-white space-y-6 overflow-y-auto font-typewriter">
+        <div>
+          <span id="lightboxCategory" class="text-[11px] uppercase tracking-widest text-editorial-400">Category</span>
+          <h3 id="lightboxTitle" class="font-headline text-2xl md:text-3xl text-white mt-1">Artwork Title</h3>
+          <p id="lightboxDescription" class="mt-4 text-editorial-200 text-sm leading-relaxed">
+            Description
+          </p>
+
+          <div class="mt-6 pt-6 border-t border-editorial-800 space-y-3 text-xs text-editorial-400">
+            <div class="flex justify-between">
+              <span>Medium:</span>
+              <span class="text-white">Digital Photography</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Location / Setting:</span>
+              <span id="lightboxLocation" class="text-white">Cedar Falls / Iowa</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Artist Sigil:</span>
+              <span class="text-white">OS Monogram Stamped</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-4 border-t border-editorial-800 flex items-center justify-between text-xs text-editorial-400">
+          <span>Frame <span id="lightboxIndex">1</span> of 8</span>
+          <div class="flex gap-2">
+            <button onclick="navigateLightbox(-1)" class="p-2 rounded border border-editorial-800 hover:bg-editorial-800 text-white transition">&larr;</button>
+            <button onclick="navigateLightbox(1)" class="p-2 rounded border border-editorial-800 hover:bg-editorial-800 text-white transition">&rarr;</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JavaScript Application Logic -->
+  <script>
+    /* ================= 1. ESSAY & WRITING TEXT DATABASE ================= */
+    const writingsData = {
+      nihilism: {
+        meta: "Philosophical Essay &bull; Albert Camus & Rick Sanchez",
+        title: "Passive Vs. Active Nihilism: Where Do We Find the Balance?",
+        subhead: "By Oliver Starr Ludolph &bull; Original Essay",
+        content: `
+          <p class="font-typewriter text-xs uppercase tracking-wider text-editorial-400 mb-4 pb-2 border-b border-editorial-200 dark:border-editorial-800">The Duality of Nihilism</p>
+          <p>To begin dissecting this topic, I feel it's important to acknowledge the philosophy of Rick Sanchez. Rick and Morty fans often praise and idolize Rick for his nihilistic speeches and views. However, to do so is a narrow and ignorant way of seeing him. If you look deeper beyond free will, you are enlightened to the contradiction between Rick's actions and his words.</p>
+          
+          <blockquote class="my-6 pl-4 border-l-2 border-amber-600 dark:border-amber-400 italic text-xl">
+            "Love is just a chemical reaction that compiles animals to breed."
+          </blockquote>
+
+          <p>I myself have used that quote in the past, arrogantly crossing my arms over my chest. I am willing, however, to admit there is flaw in such logic, given as well the fact that the very man who first said such words spent 60 years seeking revenge for his dead wife.</p>
+
+          <p>If he really believed that, he certainly would not have felt her death mattered enough to seek any closure. Yet he did. He devoted 60 years to contradicting a brief sentence of his own.</p>
+
+          <p>So, does this mean to say Rick Sanchez's nihilism is wrong? Not exactly. The complexity of the world we perceive is far beyond our own comprehension; this includes the concept of nihilism in its entirety. A lot of us don't even know how to steadily hold the duality of our own minds. Rick is a perfect example of this.</p>
+
+          <p>Seeing that his sense of nihilism comes from an attempt to lighten the weight of grief, in a way it could appear to be an active nihilistic practice. But where do we have to draw the line between true active nihilism that offers a sense of freedom, and just an unhealthy coping strategy? In my opinion, the line gets drawn at the contradiction between word and action. To truly cope with the very real, existing ache of grief by dismissing it is nothing, if not a lie.</p>
+
+          <p>Just like Rick Sanchez, we can be the smartest and most gifted scientists ever to exist; we can break down every mathematical equation—we can break down every chemical reaction to explain psychology—we can combine all this knowledge available to us, and conclude we are a speck in the midst of a cold, indifferent universe. Yet, in the same breath, we can also acknowledge that this doesn't negate our humanity. We all have an innate desire for some kind of meaning in life—being a nihilist means that you choose not to see any, not that you don't want it. And even though Rick doesn't know how to face it, just like everyone around him, he wants meaning and purpose.</p>
+
+          <p>If nihilism is the path we choose to live by, we need to stop shackling ourselves to the idea of surrender as a consequence being simply innate.</p>
+
+          <p>In 1942, a philosopher by the name of Albert Camus formally published his book, <em>"The Myth of Sisyphus."</em> In this pivotal book, he puts a name to this very concept: absurdism. While tying into nihilism's framework, absurdism is an entirely flipped conclusion compared to the nihilistic views portrayed in Rick Sanchez.</p>
+
+          <p>Let's consider that perhaps, yes, it is true that our choices and lives mean nothing to our cosmic universe. If that's so, does that not also suggest that the direction of our life is entirely ours in full? Do we not therefore have the freedom to be equally indifferent to the universe as it may be to us? In a spiteful sense, this can mean for us that we are therefore not bound to the idea that we must fear or give in to a state of helplessness as result of the universe's indifference.</p>
+        `
+      },
+      spinoza: {
+        meta: "Analytical Essay &bull; Philosophy & Modern Psychology",
+        title: "CBT & Philosophy",
+        subhead: "By Oliver Starr Ludolph &bull; Baruch Spinoza & Cognitive Behavioral Therapy",
+        content: `
+          <p>The philosophical concept I most deeply resonate with and find most admirable is that of the 17th-century philosopher Baruch Spinoza. Living during the Dutch Golden Age, Spinoza's ideas were not merely unconventional or controversial; they were profoundly radical. In a European society whose legal, social, and fundamental structures were deeply rooted in religion, his ideas were regarded as revolutionary and dangerous. His arguments challenged not simply religious doctrine, but the very framework through which human existence and human psychology were understood.</p>
+
+          <p>In a society that understood existence exclusively through the framework of a cosmic monarchy, with God positioned as a divine supreme ruler and individual consciousness existing beneath him, separate from nature, Spinoza's ideas shattered an entire deeply ingrained psychological framework. He proposed that God was not an individual, superior being presiding over creation, but rather, existence itself. God was not separate from the universe; God was the universe, and humanity was merely one expression of that infinite substance. By removing the concept of an arbitrary, punishing cosmic king, Spinoza introduced a radical new premise to the Western world: because nature operates on strict, predictable logic, the human mind and its emotions must operate on predictable logic as well.</p>
+
+          <p>In the 17th century, these ideas were not merely abstract academic debates, as we might understand them today. At the time, questioning such fundamental beliefs meant risking everything you understood your life to be. This is precisely why I find Spinoza's dedication to philosophy and his unwavering commitment to his ideas so worthy of admiration. Spinoza faced excommunication, known as Cherem, a uniquely brutal form of religious punishment intended to sever him entirely from his community. In 17th-century Jewish Amsterdam, losing one's community meant losing one's identity, safety, livelihood, and even family. His relatives were expected to completely sever their ties with him, while members of the community were prohibited from maintaining contact or even coming within a specified distance of him.</p>
+
+          <p>By systematically devaluing social status and materialism, Spinoza executed what modern psychologists call behavioral activation, intentionally organizing his environment to protect his mental autonomy.</p>
+
+          <blockquote class="my-6 pl-4 border-l-2 border-amber-600 dark:border-amber-400 italic text-xl">
+            "He remained calm because he viewed the angry mob not as personal enemies, but as forces of nature operating under distorted beliefs."
+          </blockquote>
+
+          <p>Modern clinicians stand to learn a great deal from Spinoza's approach to emotional regulation, as his legendary composure was not an accidental personality trait, but the result of a deliberate cognitive system. Those who knew him, including his landlords and neighbors, reportedly described him as gentle, curious, and exceptionally calm. Even when confronted by a furious mob threatening his life over his political writings, Spinoza's friends were forced to physically lock him inside his room to prevent him from attempting to reason with the crowd, putting his own safety at risk. He remained calm because he viewed the angry mob not as personal enemies, but as forces of nature operating under distorted beliefs—a foundational insight that directly anticipates the modern clinical practice of separating an objective event from our emotional reaction to it.</p>
+
+          <p>Ultimately, Spinoza's legacy extends far beyond abstract metaphysics. By demonstrating that our emotional reality is dictated entirely by how logically we process our thoughts, we find that we can still learn a lot from Spinoza today. His life and work provide a timeless blueprint for mental autonomy, proving that the roots of modern CBT were planted centuries ago in the quiet room of an exiled lens-grinder.</p>
+        `
+      },
+      thursday: {
+        meta: "Creative Nonfiction &bull; Modern Ennui",
+        title: "2:37 On A Thursday",
+        subhead: "By Oliver Starr Ludolph",
+        content: `
+          <p>It's a clear-sky, bright sunny day, and the temperature outside is sitting right at 75. My phone screen lights up from some stupid Facebook notification—a sharp buzz making the wooden desk vibrate.</p>
+          
+          <p class="text-sm tracking-wide text-editorial-400">Thursday. 2:47 PM.</p>
+
+          <p>I have no obligation to pick the phone up, no reason to see what the algorithm has to share, but I do it to myself anyway.</p>
+
+          <p>Half a second later, the grand reveal is there: One scroll down, my wealthy and distant relatives are plastering more photos of their carefree lives. One more scroll, right underneath, an article about an innocent girl being detained by ICE.</p>
+
+          <p class="font-headline text-2xl my-6 text-editorial-950 dark:text-white">
+            "And then there's me. Sitting in silence. Drifting back and forth between this luxury and tragedy. Sitting idle in a quiet room, staring at the world happening outside a window pane."
+          </p>
+
+          <p>It's a beautiful day. Every reason points to why I should be fine—why everything <em>IS</em> fine, to be exact. And yeah, I know I really should go outside and try to socialize...</p>
+
+          <p>...but I'm really comfortable in this chair, and I can't help but feel like everything outside of this room feels so fucking mundane.</p>
+        `
+      },
+      doyou: {
+        meta: "Personal Vignette &bull; October 16, 2026",
+        title: "Do You?",
+        subhead: "By Oliver Starr Ludolph",
+        content: `
+          <p class="text-xs text-editorial-400">10/16/2026</p>
+          
+          <p>My father and I haven't been in contact for nearly a year, but he left a comment on a video I posted today about things I've learned from the philosopher Alan Watts.</p>
+
+          <p>He said:<br><span class="italic pl-4 block my-2 text-xl font-headline">"I'm glad you're still listening to him."</span></p>
+
+          <p>Here we go around again, I suppose.<br>Of course I still listen to Alan Watts, but the real question here, dad is:</p>
+
+          <p class="font-headline text-2xl my-4 text-editorial-950 dark:text-white">'Do you?'</p>
+
+          <p>If I'm being honest, I wouldn't assume you have; with your full schedule that involves stroking your own ego.</p>
+
+          <p>I don't think Alan Watts would've particularly fancied you, but I'd be willing to bet that nevertheless he'd still be kind to you, which is something I can't remember the last time I've seen you do.</p>
+
+          <p>I often struggle to comprehend how I came from a man like you; the saddest truth I've had to realize is how much I'd rather have been born from a person with similarities to you, because then they'd only be half as bad of a Dad as you.</p>
+
+          <p class="mt-6 text-editorial-700 dark:text-editorial-200">
+            Please don't be offended; my words are the farthest thing from cruelty. After all, dad—<br>
+            I still have a heart.
+          </p>
+
+          <p class="font-headline text-2xl mt-4 text-editorial-950 dark:text-white">Do you?</p>
+        `
+      },
+      prayer: {
+        meta: "Poetry &bull; Devotional Lyric",
+        title: "Prayer On Paper",
+        subhead: "By Oliver Starr Ludolph",
+        content: `
+          <div class="space-y-4 font-typewriter text-base sm:text-lg leading-relaxed">
+            <p>To the God that may be in the stars up there, let this be a written prayer.<br>
+            I am not the most graceful with my words; my previous rhyme was likely just coincidence, but I pray you will hear these words regardless.</p>
+
+            <p>I've not given enough to you to ask for much in return, but hear this plea for the sake of the gift you've already given me.</p>
+
+            <p>His eyes, oh they're a blue as deep as the sea. I want to drown in the depths of his tears of the tortured man he's never deserved to be.</p>
+
+            <p>I love him, I love him with every fiber within me. My one wish is to have what it takes to love him flawlessly. I want to wipe every aching tear of his and create a flow of joyous tears that'll flow endlessly.</p>
+
+            <p class="text-editorial-950 dark:text-white border-l-2 border-editorial-400 pl-4 my-4 font-bold">
+              You can see by looking within that my heart is not cold, nor am I cruel. Even so, a trail of carnage and good intentions follow me everywhere I go.
+            </p>
+
+            <p>I will not ask for much, but consider please—<br>
+            If I am cursed to drag this trail behind me with everything else, just let him be.<br>
+            Just not him, please.</p>
+
+            <p>Let him lead a soft and gentle life beside me, let me hold his heart with grace.</p>
+
+            <p>Teach me to speak words sweet as honey from my tongue, and teach me to make his heart flutter just as he does to me.</p>
+
+            <p>Because it is only when his mouth curves into a smile before me that I know you've heard this request and my heart can fully rest.</p>
+          </div>
+        `
+      }
+    };
+
+    /* ================= 2. PHOTOGRAPHY LIGHTBOX DATABASE ================= */
+    const galleryItems = [
+      {
+        filename: "1000002432.jpg",
+        src: "1000002432.jpg",
+        fallback: "https://placehold.co/1200x800/181816/f5f5f5?text=1000002432.jpg+Artifacts+of+the+Street",
+        title: "Artifacts of the Street",
+        category: "Urban Subculture / Decal Layering",
+        location: "Cedar Falls, IA",
+        desc: "A high-density municipal junction box coated in peeling stickers, tags, and local emblems (563, cycling logos, independent press decals). A tribute to anonymous urban accumulation and public collage."
+      },
+      {
+        filename: "1000002433.jpg",
+        src: "1000002433.jpg",
+        fallback: "https://placehold.co/1200x800/181816/f5f5f5?text=1000002433.jpg+The+Overhang",
+        title: "The Overhang",
+        category: "Industrial Vanishing Point",
+        location: "Cedar Falls Alleyway",
+        desc: "Rough textured masonry wall draped in autumn climbing vines that frame a narrow, quiet corridor leading past dumpster containers toward a gray midwestern horizon."
+      },
+      {
+        filename: "1000002434.jpg",
+        src: "1000002434.jpg",
+        fallback: "https://placehold.co/1200x800/181816/f5f5f5?text=1000002434.jpg+Main+Street+Perspective",
+        title: "Main Street Perspective",
+        category: "Architectural Depth of Field",
+        location: "Downtown Cedar Falls",
+        desc: "Tightly framed vertical brick facade leading into a row of glowing municipal streetlamps and signal lights against an overcast afternoon sky."
+      },
+      {
+        filename: "1000002431.jpg",
+        src: "1000002431.jpg",
+        fallback: "https://placehold.co/1200x800/181816/f5f5f5?text=1000002431.jpg+Iron+and+Brick",
+        title: "Iron & Brick",
+        category: "Geometric Lines",
+        location: "Industrial Corridor",
+        desc: "A Victorian-influenced black wrought-iron staircase bisecting uniform horizontal brick coursework and vintage glass tile windows."
+      },
+      {
+        filename: "1000002424.jpg",
+        src: "1000002424.jpg",
+        fallback: "https://placehold.co/1200x800/181816/f5f5f5?text=1000002424.jpg+Rain+and+Leaves",
+        title: "Rain & Leaves",
+        category: "Subjective Street POV",
+        location: "Urban Walkway",
+        desc: "Bird's-eye perspective of Converse sneakers resting on wet multi-toned brick pavers, scattered with golden autumn leaves and water reflections."
+      },
+      {
+        filename: "1000002365.jpg",
+        src: "1000002365.jpg",
+        fallback: "https://placehold.co/1200x800/181816/f5f5f5?text=1000002365.jpg+Character+and+Form",
+        title: "Character & Form",
+        category: "Portraiture & Theatricality",
+        location: "Interior Stairwell",
+        desc: "Toned ambient character study positioned against steep stair treads and industrial handrails, echoing Oliver's expressive performance work."
+      },
+      {
+        filename: "1000002163.jpg",
+        src: "1000002163.jpg",
+        fallback: "https://placehold.co/1200x800/181816/f5f5f5?text=1000002163.jpg+The+Crossing",
+        title: "The Crossing",
+        category: "Midwestern Landscape",
+        location: "Washington Cemetery Grounds",
+        desc: "Quiet, sprawling rural churchyard under dusk sky with headstones scattered across rolling grass before a solitary white church steeple."
+      },
+      {
+        filename: "1000002057.jpg",
+        src: "1000002057.jpg",
+        fallback: "https://placehold.co/1200x800/181816/f5f5f5?text=1000002057.jpg+Honeysuckle+Crimson",
+        title: "Honeysuckle Crimson",
+        category: "Macro Botanical Study",
+        location: "Iowa Nature Trail",
+        desc: "High clarity macro capture of vivid scarlet berries and soft green leaves bathed in natural sunlight, emphasizing crisp organic symmetry."
+      }
+    ];
+
+    let currentPhotoIndex = 0;
+
+    /* Handle dynamic client-side file selection */
+    function handleLocalFiles(e) {
+      const files = Array.from(e.target.files);
+      if (!files.length) return;
+      let matchedCount = 0;
+
+      files.forEach(file => {
+        // match monogram
+        if (file.name.includes("dc66b823") || file.name.toLowerCase().includes("signature") || file.name.toLowerCase().includes("monogram")) {
+          const url = URL.createObjectURL(file);
+          document.querySelectorAll('img[alt*="Monogram"], img[alt="Signature"]').forEach(img => {
+            img.src = url;
+            img.style.display = 'block';
+          });
+        }
+
+        // match photography by filename or index
+        galleryItems.forEach((item, index) => {
+          if (file.name.includes(item.filename.replace('.jpg', '')) || file.name === item.filename) {
+            const url = URL.createObjectURL(file);
+            item.src = url;
+            const imgElem = document.getElementById(`img-${index}`);
+            if (imgElem) imgElem.src = url;
+            matchedCount++;
+          }
+        });
+      });
+
+      const badge = document.getElementById('loadBadge');
+      if (badge) {
+        badge.textContent = `Loaded ${files.length} file(s) locally`;
+        badge.className = "text-[11px] font-mono text-emerald-600 dark:text-emerald-400 font-semibold";
+      }
+    }
+
+    /* ================= 3. MODAL CONTROLS ================= */
+    function openReadingModal(key) {
+      const data = writingsData[key];
+      if (!data) return;
+
+      document.getElementById('modalMeta').textContent = data.meta;
+      document.getElementById('modalTitle').textContent = data.title;
+      document.getElementById('modalSubhead').textContent = data.subhead;
+      document.getElementById('modalBody').innerHTML = data.content;
+
+      const modal = document.getElementById('readingModal');
+      modal.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeReadingModal() {
+      const modal = document.getElementById('readingModal');
+      modal.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    function openPhotoLightbox(index) {
+      currentPhotoIndex = index;
+      updateLightboxContent();
+      const lb = document.getElementById('photoLightbox');
+      lb.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function updateLightboxContent() {
+      const item = galleryItems[currentPhotoIndex];
+      const lbImg = document.getElementById('lightboxImg');
+      lbImg.src = item.src;
+      lbImg.onerror = function() {
+        this.src = item.fallback;
+      };
+      document.getElementById('lightboxTitle').textContent = item.title;
+      document.getElementById('lightboxCategory').textContent = `${item.category} • ${item.filename}`;
+      document.getElementById('lightboxLocation').textContent = item.location;
+      document.getElementById('lightboxDescription').textContent = item.desc;
+      document.getElementById('lightboxIndex').textContent = currentPhotoIndex + 1;
+    }
+
+    function closePhotoLightbox() {
+      const lb = document.getElementById('photoLightbox');
+      lb.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    function navigateLightbox(dir) {
+      currentPhotoIndex = (currentPhotoIndex + dir + galleryItems.length) % galleryItems.length;
+      updateLightboxContent();
+    }
+
+    function handleLightboxBackdrop(e) {
+      if (e.target.id === 'photoLightbox') {
+        closePhotoLightbox();
+      }
+    }
+
+    /* Keyboard navigation */
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeReadingModal();
+        closePhotoLightbox();
+      } else if (e.key === 'ArrowRight' && !document.getElementById('photoLightbox').classList.contains('hidden')) {
+        navigateLightbox(1);
+      } else if (e.key === 'ArrowLeft' && !document.getElementById('photoLightbox').classList.contains('hidden')) {
+        navigateLightbox(-1);
+      }
+    });
+
+    /* ================= 4. FILTERING WRITINGS ================= */
+    const filterButtons = document.querySelectorAll('#writingFilters .filter-btn');
+    const writingCards = document.querySelectorAll('#writingsContainer .writing-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+
+        // Update button styles
+        filterButtons.forEach(b => {
+          b.className = 'filter-btn px-3 py-1 rounded-full border border-editorial-300 dark:border-editorial-700 hover:bg-editorial-100 dark:hover:bg-editorial-900 transition';
+        });
+        btn.className = 'filter-btn px-3 py-1 rounded-full bg-editorial-900 text-white dark:bg-white dark:text-editorial-900 transition';
+
+        // Filter cards
+        writingCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    /* ================= 5. THEME TOGGLE (DARK / LIGHT) ================= */
+    const themeToggle = document.getElementById('themeToggle');
+    const sunIcon = document.getElementById('sunIcon');
+    const moonIcon = document.getElementById('moonIcon');
+
+    // Default to dark mode for artistic editorial mood
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    if (savedTheme === 'dark') {
+      document.documentElement.classList.add('dark');
+      sunIcon.classList.remove('hidden');
+      moonIcon.classList.add('hidden');
+    } else {
+      document.documentElement.classList.remove('dark');
+      moonIcon.classList.remove('hidden');
+      sunIcon.classList.add('hidden');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      if (isDark) {
+        sunIcon.classList.remove('hidden');
+        moonIcon.classList.add('hidden');
+      } else {
+        moonIcon.classList.remove('hidden');
+        sunIcon.classList.add('hidden');
+      }
+    });
+
+    /* ================= 6. MOBILE MENU ================= */
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    /* ================= 7. COPY CONTACT CLIPBOARD ================= */
+    function copyContact() {
+      const email = 'groguforever@gmail.com';
+      const dummy = document.createElement('textarea');
+      document.body.appendChild(dummy);
+      dummy.value = email;
+      dummy.select();
+      document.execCommand('copy');
+      document.body.removeChild(dummy);
+
+      const btn = document.getElementById('copyEmailBtn');
+      const original = btn.innerHTML;
+      btn.innerHTML = `<span>Copied to Clipboard!</span>`;
+      setTimeout(() => {
+        btn.innerHTML = original;
+      }, 2500);
+    }
+
+    /* ================= 8. FORM SUBMISSION FEEDBACK ================= */
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const feedback = document.getElementById('formFeedback');
+      feedback.classList.remove('hidden');
+      document.getElementById('portfolioContactForm').reset();
+      setTimeout(() => {
+        feedback.classList.add('hidden');
+      }, 5000);
+    }
+  </script>
+</body>
+</html>
